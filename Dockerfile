@@ -1,6 +1,5 @@
 # Build stage
-FROM node:20-alpine as build
-RUN npm install -g npm@11.10.0
+FROM node:20-alpine AS build
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci
