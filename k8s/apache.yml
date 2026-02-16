@@ -1,23 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: online-shop-deployment
+  name: apache-deployment
   namespace: online-shop
-  labels:
-    app: online-shop
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: online-shop
+      app: apache
   template:
     metadata:
       labels:
-        app: online-shop
+        app: apache
     spec:
       containers:
-      - name: e-commerce
-        image: ishu11/e-commerce-app:latest
+      - name: apache
+        image: httpd:latest
         ports:
         - containerPort: 80
-        
